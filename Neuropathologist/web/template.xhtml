@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="default.css"/>
+        <h:outputStylesheet library="css" name="cssLayout.css"/>
+        <title>Neuropathologist</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top" class="top">
+            <!-- <ui:insert name="top">Top</ui:insert> -->
+            <ul>
+                <li><h:form><h:commandLink value="Inicio" action="/neuro/index" /></h:form></li>
+                <li>
+                    Grupo
+                    <ul>
+                        <li><h:form><h:commandLink value="Novo" action="/neuro/grupo/novo" /></h:form></li>
+                        <li>Listar</li>
+                    </ul>
+                </li>
+                <li>
+                    Usuario
+                    <ul>
+                        <li>Novo</li>
+                        <li>Listar</li>
+                    </ul>
+                </li>                
+            </ul>
+
+        </div>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+    </h:body>
+
+</html>
