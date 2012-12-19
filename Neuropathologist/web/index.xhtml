@@ -9,6 +9,15 @@
         Hello from Facelets
         <br />
         <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        <h:form>
+            <h:panelGrid columns="2">
+            <h:outputLabel value="Nome" for="nome"/>
+            <h:inputText value="#{usuarioMB.usuario.nome}" id="nome"/>
+            <h:outputLabel value="Senha" for="senha"/>
+            <h:inputText value="#{usuarioMB.usuario.senha}" id="senha"/>
+            </h:panelGrid>
+            <h:commandButton value="Salvar" action="#{usuarioMB.salvar}" />
+        </h:form>
     </h:body>
 </html>
 
