@@ -10,16 +10,16 @@
         <ui:composition template="/template.xhtml">
 
             <ui:define name="content">
-                <!-- <p:panel header="Novo Grupo"> -->
+                 <p:panel header="#{label.Novo_Grupo}"> 
                     <h:form>
                         <h:panelGrid columns="2">
                             <h:outputLabel value="#{label.Nome}" for="nome"/>
                             <h:inputText value="#{grupoMB.grupo.nome}" id="nome"/>
                         </h:panelGrid>                        
-                        <h:commandButton value="Salvar" action="#{grupoMB.salvar}" />
+                        <h:commandButton value="#{label.Salvar}" action="#{grupoMB.salvar}" />
                     </h:form>
                     
-                <!-- </p:panel> -->
+                </p:panel> 
 
 
             </ui:define>
