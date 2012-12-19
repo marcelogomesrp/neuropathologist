@@ -28,8 +28,8 @@ public class Msg implements Serializable{
         //this.mensagem = new Mensagem("Bundle", new Locale("en", "US"));
     }
 
-    public void addSuccess(String msg){
-        //String msg = this.mensagem.getValue(key);
+    public void addSuccess(String key){
+        String msg = this.getValue(key);
         FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg);
         FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
         FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("msgs");
@@ -69,12 +69,19 @@ public class Msg implements Serializable{
         FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("msgs");
     }
     
+    private String getValue(String key){
+        FacesContext fc = FacesContext.getCurrentInstance();
+        ResourceBundle rb = ResourceBundle.getBundle("bundle.Bundle",fc.getViewRoot().getLocale());
+        String mensagem = rb.getString(key);
+        return mensagem;
+    }
+    
     public  void teste(String msg){
         FacesContext fc = FacesContext.getCurrentInstance();
         ResourceBundle rb = ResourceBundle.getBundle("bundle.Bundle",fc.getViewRoot().getLocale());
         String mensagem = rb.getString(msg);
                 
-        FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg);
+        FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, mensagem, mensagem);
         FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
         FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("mensagem");
         

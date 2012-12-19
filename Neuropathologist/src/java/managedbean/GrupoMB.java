@@ -51,7 +51,7 @@ public class GrupoMB implements Serializable{
         grupoService.salvar(getGrupo());
         grupo = new Grupo();
         //msg.addSuccess("Grupo adicionado com sucesso");
-        msg.teste("Nome");
+        msg.addSuccess("Salvo_com_sucesso");
         return null;
     }
 
