@@ -6,6 +6,7 @@ package managedbean.utils;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.ResourceBundle;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -67,4 +68,16 @@ public class Msg implements Serializable{
         FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
         FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("msgs");
     }
+    
+    public  void teste(String msg){
+        FacesContext fc = FacesContext.getCurrentInstance();
+        ResourceBundle rb = ResourceBundle.getBundle("bundle.Bundle",fc.getViewRoot().getLocale());
+        String mensagem = rb.getString(msg);
+                
+        FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg);
+        FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
+        FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("mensagem");
+        
+    }
+    
 }
