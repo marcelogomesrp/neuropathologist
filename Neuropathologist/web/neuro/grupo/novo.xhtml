@@ -13,7 +13,7 @@
                 <!-- <p:panel header="Novo Grupo"> -->
                     <h:form>
                         <h:panelGrid columns="2">
-                            <h:outputLabel value="Nome" for="nome"/>
+                            <h:outputLabel value="#{label.Nome}" for="nome"/>
                             <h:inputText value="#{grupoMB.grupo.nome}" id="nome"/>
                         </h:panelGrid>                        
                         <h:commandButton value="Salvar" action="#{grupoMB.salvar}" />
