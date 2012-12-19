@@ -9,6 +9,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
+import managedbean.utils.Msg;
 import model.Grupo;
 import service.GrupoService;
 
@@ -21,6 +22,8 @@ import service.GrupoService;
 public class GrupoMB implements Serializable{
     @Inject
     private GrupoService grupoService;
+    @Inject
+    private Msg msg;
     private Grupo grupo;
 
     /**
@@ -47,6 +50,7 @@ public class GrupoMB implements Serializable{
     public String salvar(){
         grupoService.salvar(getGrupo());
         grupo = new Grupo();
+        msg.addSuccess("Grupo adicionado com sucesso");
         return null;
     }
 
